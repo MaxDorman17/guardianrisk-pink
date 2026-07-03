@@ -74,28 +74,13 @@
           </ul>
         </div>
 
-        <div class="hero__visual reveal" aria-hidden="true">
-          <div class="orbit">
-            <div class="orbit__ring orbit__ring--1"></div>
-            <div class="orbit__ring orbit__ring--2"></div>
-            <div class="orbit__ring orbit__ring--3"></div>
-            <div class="orbit__core">
-              <svg viewBox="0 0 120 120" class="orbit__eye">
-                <defs>
-                  <linearGradient id="eyeGrad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#7b2cbf"/>
-                    <stop offset="1" stop-color="#ff3cac"/>
-                  </linearGradient>
-                </defs>
-                <path d="M12 60c14-26 82-26 96 0-14 26-82 26-96 0Z" fill="none" stroke="url(#eyeGrad)" stroke-width="4"/>
-                <circle cx="60" cy="60" r="20" fill="none" stroke="url(#eyeGrad)" stroke-width="4"/>
-                <circle cx="60" cy="60" r="8" fill="#ff3cac"/>
-              </svg>
-            </div>
-            <span class="orbit__blip orbit__blip--a"></span>
-            <span class="orbit__blip orbit__blip--b"></span>
-            <span class="orbit__blip orbit__blip--c"></span>
-          </div>
+        <div class="hero__visual reveal">
+          <figure class="media hero__media">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1100&q=80&auto=format&fit=crop" alt="Corporate towers viewed from below" loading="eager" />
+            <figcaption class="media__badge">
+              <span class="media__dot"></span> Confidential &middot; Evidence-grade
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -246,6 +231,16 @@
       </div>
     </section>
 
+    <!-- ===== Statement band ===== -->
+    <section class="statement">
+      <img class="statement__bg" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600&q=80&auto=format&fit=crop" alt="" aria-hidden="true" />
+      <div class="container statement__inner reveal">
+        <p class="statement__lead">When the stakes are high,</p>
+        <h2 class="statement__title">discretion is <span class="gradient-text">everything.</span></h2>
+        <p class="statement__sub">Sensitive matters demand judgement, evidence integrity and absolute confidentiality — the standards we hold on every engagement.</p>
+      </div>
+    </section>
+
     <!-- ===== About ===== -->
     <section class="section" id="about">
       <div class="container about__grid">
@@ -270,13 +265,14 @@
             <div><strong>Absolute discretion</strong><span>Your matter never leaves the room.</span></div>
           </div>
         </div>
-        <aside class="about__panel reveal">
-          <blockquote>
-            &ldquo;Intelligent oversight.<br /><span class="gradient-text">Trusted compliance.</span>&rdquo;
-          </blockquote>
-          <p>A confidential first conversation costs nothing — and often clarifies more than you'd expect.</p>
-          <a href="#contact" class="btn btn--primary">Start a confidential conversation</a>
-        </aside>
+        <figure class="media about__feature reveal">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80&auto=format&fit=crop" alt="Considered, discreet professional environment" loading="lazy" />
+          <figcaption class="about__feature-cap">
+            <blockquote>&ldquo;Intelligent oversight.<br /><span class="gradient-text">Trusted compliance.</span>&rdquo;</blockquote>
+            <p>A confidential first conversation costs nothing — and often clarifies more than you'd expect.</p>
+            <a href="#contact" class="btn btn--primary">Start a confidential conversation</a>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
