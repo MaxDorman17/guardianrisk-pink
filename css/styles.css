@@ -38,6 +38,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* keep anchored sections clear of the sticky header */
+main section[id] { scroll-margin-top: 92px; }
+
 body {
   font-family: var(--ff-body);
   background: var(--bg);
@@ -500,8 +503,22 @@ ul { list-style: none; }
 .commit strong { display: block; font-family: var(--ff-head); font-size: 1rem; }
 .commit span { color: var(--text-dim); font-size: .93rem; }
 
-.steps { display: grid; gap: 14px; counter-reset: step; }
+.steps { position: relative; display: grid; gap: 16px; counter-reset: step; }
+/* timeline spine — hidden behind the opaque cards, visible in the gaps between numbers */
+.steps::before {
+  content: "";
+  position: absolute;
+  left: 43px;
+  top: 44px;
+  bottom: 44px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--purple), var(--pink));
+  opacity: .45;
+  z-index: 0;
+}
 .step {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 20px;
   align-items: flex-start;
@@ -509,10 +526,15 @@ ul { list-style: none; }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  transition: transform .25s ease, border-color .25s ease;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
-.step:hover { transform: translateX(6px); border-color: var(--line-2); }
+.step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,60,172,.35);
+  box-shadow: 0 20px 45px -26px rgba(123,44,191,.5);
+}
 .step__num {
+  position: relative;
   font-family: var(--ff-head);
   font-weight: 700;
   font-size: 1.4rem;
@@ -520,8 +542,35 @@ ul { list-style: none; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
   min-width: 40px;
 }
+/* soft glowing marker behind each step number */
+.step__num::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: .55em;
+  transform: translate(-50%, -50%);
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,60,172,.32), transparent 68%);
+  z-index: -1;
+  pointer-events: none;
+}
+.step__body { flex: 1; min-width: 0; }
 .step h3 { font-family: var(--ff-head); font-size: 1.12rem; margin-bottom: 6px; }
 .step p { color: var(--text-dim); font-size: .95rem; }
+.step__output {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: rgba(255,60,172,.08);
+  border: 1px solid rgba(255,60,172,.22);
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .2px;
+  color: #ff7bc4;
+}
+.process-cta { margin-top: clamp(40px, 6vw, 60px); }
 
 /* ---------- About ---------- */
 .about__grid {
