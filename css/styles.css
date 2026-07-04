@@ -635,7 +635,7 @@ ul { list-style: none; }
   gap: clamp(36px, 5vw, 64px);
   align-items: start;
 }
-.contact__channels { display: grid; gap: 16px; margin: 30px 0; }
+.contact__channels { display: grid; gap: 16px; margin: 28px 0 0; }
 .contact__channels li { display: flex; gap: 14px; align-items: center; }
 .contact__ic {
   flex: none;
@@ -649,6 +649,17 @@ ul { list-style: none; }
 .contact__channels em { display: block; font-style: normal; font-size: .8rem; color: var(--grey); text-transform: uppercase; letter-spacing: .5px; }
 .contact__channels a { font-family: var(--ff-head); font-weight: 600; }
 .contact__channels a:hover { color: var(--pink); }
+
+.contact__assurances {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  margin-top: 22px;
+  color: var(--text-dim);
+  font-size: .9rem;
+  font-weight: 500;
+}
+.contact__assurances li { display: inline-flex; align-items: center; gap: 8px; }
 
 .urgent {
   margin-top: 26px;
@@ -695,6 +706,15 @@ ul { list-style: none; }
   box-shadow: 0 0 0 3px rgba(255,60,172,.15);
 }
 .field textarea { resize: vertical; }
+.form__privacy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: .8rem;
+  color: var(--grey);
+}
+.form__privacy svg { flex: none; width: 15px; height: 15px; fill: none; stroke: var(--pink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; opacity: .85; }
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--line); background: rgba(0,0,0,.25); }
