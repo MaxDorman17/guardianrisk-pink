@@ -589,6 +589,30 @@ ul { list-style: none; }
 .about__points strong { display: block; font-family: var(--ff-head); }
 .about__points span { color: var(--text-dim); font-size: .92rem; }
 
+.about__who { margin-top: 30px; }
+.about__who-label {
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--ff-head);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+.about__pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.about__pills li {
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,60,172,.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: .84rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
 .about__panel {
   padding: 40px 34px;
   border-radius: var(--radius);
@@ -912,9 +936,16 @@ body::after {
   justify-content: flex-end;
   aspect-ratio: 4 / 5;
   min-height: 440px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 34px 80px -34px rgba(123,44,191,.4), var(--shadow);
 }
 .about__feature img { position: absolute; inset: 0; z-index: 0; }
+/* softer brand tint (~20% less) + darker base for text legibility */
+.about__feature::before { opacity: .72; }
+.about__feature::after {
+  background:
+    linear-gradient(160deg, rgba(123,44,191,.18), transparent 45%),
+    linear-gradient(0deg, rgba(9,13,23,.94) 6%, rgba(9,13,23,.35) 42%, transparent 68%);
+}
 .about__feature-cap { position: relative; z-index: 3; padding: clamp(24px, 3vw, 38px); }
 .about__feature-cap blockquote {
   font-family: var(--ff-head);
